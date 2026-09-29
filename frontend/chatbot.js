@@ -2,7 +2,7 @@
    AURALGUARD AI CHATBOT
 ============================================================ */
 
-const API_URL = "http://127.0.0.1:8001";
+const API_URL = "https://aural-ze9j.onrender.com/";
 
 
 document.addEventListener("DOMContentLoaded", () => {
