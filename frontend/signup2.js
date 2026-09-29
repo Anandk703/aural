@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://aural-ze9j.onrender.com/";
+const API_BASE_URL = "https://aural-ze9j.onrender.com";
 
 const signupForm = document.getElementById("signupForm");
 
@@ -32,9 +32,7 @@ signupForm.addEventListener("submit", async function (event) {
     console.log("Email:", email);
 
     if (password !== confirmPassword) {
-
         alert("Passwords do not match.");
-
         return;
     }
 
@@ -52,56 +50,37 @@ signupForm.addEventListener("submit", async function (event) {
                 },
 
                 body: JSON.stringify({
-
                     username: username,
                     email: email,
                     password: password,
                     confirm_password: confirmPassword
-
                 })
             }
         );
 
-        console.log(
-            "Signup status:",
-            response.status
-        );
+        console.log("Signup status:", response.status);
 
         const data = await response.json();
 
-        console.log(
-            "Signup response:",
-            data
-        );
+        console.log("Signup response:", data);
 
         if (!response.ok) {
-
             alert(
                 data.detail ||
                 "Signup failed."
             );
-
             return;
         }
 
-        alert(
-            "Account created successfully!"
-        );
+        alert("Account created successfully!");
 
-        window.location.href =
-            "login.html";
+        window.location.href = "login.html";
 
     } catch (error) {
 
-        console.error(
-            "SIGNUP ERROR:",
-            error
-        );
+        console.error("SIGNUP ERROR:", error);
 
-        alert(
-            "Cannot connect to AuralGuard backend."
-        );
-
+        alert("Cannot connect to AuralGuard backend.");
     }
 
 });
